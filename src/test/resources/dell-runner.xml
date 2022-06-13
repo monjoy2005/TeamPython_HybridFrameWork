@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Dell Smoke Test">
+    <parameter name="useCloudEnv" value="false"></parameter>
+    <parameter name="envName" value="browserstack"></parameter>
+    <parameter name="os" value="windows"></parameter>
+    <parameter name="osVersion" value="11"></parameter>
+    <parameter name="browserName" value="chrome"></parameter>
+    <parameter name="browserVersion" value="102"></parameter>
+    <parameter name="url" value="https://www.dell.com/en-us"></parameter>
+
+<!--    <test name="Search Test">-->
+<!--        <classes>-->
+<!--            <class name="Application.dell.SearchTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="SignIn Test">-->
+<!--        <classes>-->
+<!--            <class name="Application.dell.SignInTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="DropDown Test">-->
+<!--        <classes>-->
+<!--            <class name="Application.dell.DropDownTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Footer Option Test">
+        <classes>
+            <class name="Application.dell.FooterOptionsTest"></class>
+        </classes>
+    </test>
+
+
+
+
+</suite>

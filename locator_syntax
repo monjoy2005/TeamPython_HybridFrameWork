@@ -1,0 +1,29 @@
+locators:
+
+id
+name
+tagName
+className
+
+linkText
+partial linkText
+
+css selector: syntax, regular expression, regex
+		- tagName[attribute='value']
+		- tagName[*attribute='value']
+		- #id = tagName[id='value']
+		- .class = tagName[class='value']
+
+xpath:
+		- //tagName[contains(@attribute,'value')]
+		- transverse folrward (parent to child) example: xpath/tag/tag/tag
+		- transverse back (childto parent) example: xpath/../../..
+		- sibling transverse (forward) example: xpath/follwing-sibling::tag
+		- sibling transverse (back) example: xpath/preceding-sibling::tag
+
+//tagName[text()='value']
+
+
+tagName[attribute='value'] tr:nth-child(index)
+tagName[attribute='value'] td:nth-child(index)
+tagName[attribute='value'] tr:nth-child(index) td:nth-child(index)
