@@ -13,3 +13,8 @@ Then in intelliJ in your project go to Terminal
 #	git add .
 #	git commit -m "write a massage"
 #	git push -u origin "YOUR BRANCH NAME"
+
+3rd step - when team lead will confirm, the marge is done
+In intelliJ in your project go to Terminal
+#	git checkout master
+#	git pull
