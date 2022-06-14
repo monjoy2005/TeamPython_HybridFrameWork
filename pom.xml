@@ -84,14 +84,18 @@
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.1</version>
+                <version>2.12.4</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>..\April22-SeleniumProject\src\test\resources\amazon-runner.xml</suiteXmlFile>
+                        <suiteXmlFile>..\TeamPython_HybridFrameWork\src\test\resources\dell-runner.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+
+
+
 
 </project>

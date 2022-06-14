@@ -180,6 +180,10 @@ public class CommonAPI {
         return driver.getTitle();
     }
 
+    public String getPageUrl(){             //NEW by joy
+        return driver.getCurrentUrl();
+    }
+
     public String getElementText(WebElement element){
         return element.getText();
     }
