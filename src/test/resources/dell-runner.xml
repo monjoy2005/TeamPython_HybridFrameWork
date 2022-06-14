@@ -10,23 +10,23 @@
     <parameter name="browserVersion" value="102"></parameter>
     <parameter name="url" value="https://www.dell.com/en-us"></parameter>
 
-<!--    <test name="Search Test">-->
-<!--        <classes>-->
-<!--            <class name="Application.dell.SearchTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Search Test">
+        <classes>
+            <class name="Application.dell.SearchTest"></class>
+        </classes>
+    </test>
 
-<!--    <test name="SignIn Test">-->
-<!--        <classes>-->
-<!--            <class name="Application.dell.SignInTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="SignIn Test">
+        <classes>
+            <class name="Application.dell.SignInTest"></class>
+        </classes>
+    </test>
 
-<!--    <test name="DropDown Test">-->
-<!--        <classes>-->
-<!--            <class name="Application.dell.DropDownTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="DropDown Test">
+        <classes>
+            <class name="Application.dell.DropDownTest"></class>
+        </classes>
+    </test>
 
     <test name="Footer Option Test">
         <classes>
