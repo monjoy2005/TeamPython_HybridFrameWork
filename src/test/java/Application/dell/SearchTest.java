@@ -8,6 +8,8 @@ import pages.dell_Pages.SearchResultPage;
 import utility.ExcelReader;
 import utility.Utility;
 
+import java.util.List;
+
 public class SearchTest extends CommonAPI {
 
 
@@ -21,103 +23,112 @@ public class SearchTest extends CommonAPI {
     }
 
 
-    //@Test
+   // @Test
     public void searchAmdLaptop(){
         HomePage homePage = new HomePage(getDriver());
         SearchResultPage searchResultPage = new SearchResultPage(getDriver());
-        homePage.searchElement("AMD Laptop");                                 //  with reusable steps
-        //type(homePage.searchField,"AMD Laptop");                            //  without reusable steps
+        homePage.searchElement("AMD Laptop");
         homePage.clickSearchBtn();
         searchResultPage.checkAmdLogoIsPresent();
     }
 
-    //@Test
+   // @Test
     public void searchGamingPc(){
         HomePage homePage = new HomePage(getDriver());
-        //SearchResultPage searchResultPage = new SearchResultPage(getDriver());
-        homePage.searchElement("Gaming Pc");
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 3,1));
         homePage.clickSearchBtn();
         String expectedGamingPcPageUrl="https://www.dell.com/en-us/search/Gaming%20Pc";
         Assert.assertEquals(expectedGamingPcPageUrl,getPageUrl());
     }
-    //@Test
-    public void searchMonitor(){
+    @Test
+    public void searchMonitor(){                            // has all the success massage
         HomePage homePage = new HomePage(getDriver());
         SearchResultPage searchResultPage = new SearchResultPage(getDriver());
-        homePage.searchElement("Monitor");
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 4,1));
+        System.out.println("Type monitor success");
         homePage.clickSearchBtn();
-        searchResultPage.checkMonitorsTextIsPresent();
+        System.out.println("Click searchBtn success");
+        String expectedMassage = "monitor";
+        Assert.assertEquals(expectedMassage,searchResultPage.monitorsSearchText());
+        System.out.println("expectedMassage and actualMassage matched");
     }
 
-    //@Test
+   @Test
     public void searchKvmConsole(){
         HomePage homePage = new HomePage(getDriver());
         SearchResultPage searchResultPage = new SearchResultPage(getDriver());
-        homePage.searchElement("kvm console");
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 5,1));
         homePage.clickSearchBtn();
-        searchResultPage.checkKvmTextIsPresent();
+        String expectedMassage = "kvm console";
+        Assert.assertEquals(expectedMassage,searchResultPage.kvmSearchText());
     }
 
 
-    //@Test
+   @Test
     public void searchServer(){
         HomePage homePage = new HomePage(getDriver());
         SearchResultPage searchResultPage = new SearchResultPage(getDriver());
-        homePage.searchElement("Server");
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 6,1));
         homePage.clickSearchBtn();
         String expectedMassage= searchResultPage.getServerPageInfo();
         Assert.assertEquals("server",expectedMassage);
     }
 
-    //@Test
+    @Test
     public void emptySearch(){
-        HomePage homepage=new HomePage(getDriver());
-        homepage.searchElement("");
+        HomePage homePage=new HomePage(getDriver());
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 7,1));
         String expectedTitle = "Computers, Monitors & Technology Solutions | Dell USA";
         Assert.assertEquals(expectedTitle,getPageTitle());
     }
 
-    //@Test
+    @Test
     public void backPack(){
         HomePage homePage = new HomePage(getDriver());
-        SearchResultPage searchResultPage = new SearchResultPage(getDriver());
-        homePage.searchElement("backpack");
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 8,1));
         homePage.clickSearchBtn();
-        searchResultPage.checkLessThan100();
-        searchResultPage.checkLessThan100MassageIsPresent();
+        String expectedTitle = "Dell Search";
+        Assert.assertEquals(expectedTitle,getPageTitle());
+
     }
 
-    //@Test
+    @Test
     public void support(){
         HomePage homePage = new HomePage(getDriver());
-        SearchResultPage searchResultPage = new SearchResultPage(getDriver());
-        homePage.searchElement("support");
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 9,1));
         homePage.clickSearchBtn();
-        searchResultPage.checkSupportHeaderTextIsPresent();
+        String expectedUrl = "https://www.dell.com/en-us/search/support";
+        Assert.assertEquals(expectedUrl,getPageUrl());
     }
 
     @Test
     public void keyboard(){
         HomePage homePage = new HomePage(getDriver());
-        SearchResultPage searchResultPage = new SearchResultPage(getDriver());
-        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"/data/TestData.xlsx");
-        //homePage.searchElement(excelReader.getDataFromCell(dell,6,2));
-//        homePage.searchElement("keyboard");
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 10,1));
         homePage.clickSearchBtn();
-        searchResultPage.checkKeyboardHeaderTextIsPresent();
+        String expectedUrl = "https://www.dell.com/en-us/search/backpack";
+        Assert.assertEquals(expectedUrl,getPageUrl());
+    }
+
+    @Test
+    public void searchMultipleItems(){
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        List<String> items = excelReader.getEntireColumnForGivenHeader("dell", "Item");
+        HomePage homePage = new HomePage(getDriver());
+        for (String item: items) {
+            homePage.searchElementAndEnter(item);
+            homePage.clearSearchField();
+        }
+
     }
 
 }
 
-
-//    @Test
-//    public void searchMultipleItems(){
-//        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"/data/TestData.xlsx");
-//        List<String> items = excelReader.getEntireColumnForGivenHeader("Sheet1", "item");
-//        HomePage homePage = new HomePage(getDriver());
-//        for (String item: items) {
-//            homePage.searchElementAndEnter(item);
-//            homePage.clearSearchField();
-//        }
-//
-//    }

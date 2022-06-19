@@ -93,10 +93,17 @@ public class ExcelReader {
     }
 
 //    public static void main(String[] args)  {
-//        String path = "C:\\Users\\PIIT_NYA\\eclipse-workspace\\April22-SeleniumProject\\data\\TestData.xlsx";
+//        String path = "/Users/monjoy/IdeaProjects/TeamPython_HybridFrameWork/data/TestData.xlsx";
 //        ExcelReader excelReader = new ExcelReader(path);
-//        List<String> items = excelReader.getEntireColumnForGivenHeader("Sheet1", "id");
-//        //String items = excelReader.getValueForGivenHeaderAndKey("Sheet1", "id", "id004");
+//        List<String> items = excelReader.getEntireColumnForGivenHeader("dell", "item");
+//        String item = excelReader.getValueForGivenHeaderAndKey("dell", "id", "5");
 //        System.out.println(items);
+//    }
+
+//    public static void main(String[] args) {
+//        //String path = "/Users/monjoy/IdeaProjects/TeamPython_HybridFrameWork/data/TestData.xlsx";
+//        ExcelReader excelReader = new ExcelReader("/Users/monjoy/IdeaProjects/TeamPython_HybridFrameWork/data/TestData.xlsx");
+//        String item = excelReader.getDataFromCell("dell", 5,2);
+//        System.out.println(item);
 //    }
 }
