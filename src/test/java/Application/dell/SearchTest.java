@@ -13,7 +13,7 @@ import java.util.List;
 public class SearchTest extends CommonAPI {
 
 
-    //@Test
+    @Test
     public void searchLaptop(){
         HomePage homePage = new HomePage(getDriver());
         homePage.searchElement("Laptop");
@@ -23,16 +23,16 @@ public class SearchTest extends CommonAPI {
     }
 
 
-   // @Test
+    @Test
     public void searchAmdLaptop(){
         HomePage homePage = new HomePage(getDriver());
         SearchResultPage searchResultPage = new SearchResultPage(getDriver());
         homePage.searchElement("AMD Laptop");
         homePage.clickSearchBtn();
-        searchResultPage.checkAmdLogoIsPresent();
+        Assert.assertTrue(searchResultPage.checkAmdLogoIsPresent());
     }
 
-   // @Test
+    @Test
     public void searchGamingPc(){
         HomePage homePage = new HomePage(getDriver());
         ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
@@ -114,7 +114,7 @@ public class SearchTest extends CommonAPI {
         ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
         homePage.searchElement(excelReader.getDataFromCell("dell", 10,1));
         homePage.clickSearchBtn();
-        String expectedUrl = "https://www.dell.com/en-us/search/backpack";
+        String expectedUrl = "https://www.dell.com/en-us/search/keyboard";
         Assert.assertEquals(expectedUrl,getPageUrl());
     }
 

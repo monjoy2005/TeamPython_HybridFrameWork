@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.security.PrivateKey;
+
 public class HomePage extends CommonAPI{
 
 
@@ -71,6 +73,8 @@ public class HomePage extends CommonAPI{
 
     @FindBy(xpath = "//footer[@id='mh-unified-footer']/nav[3]/ul/li/a")
     private WebElement footerCopyrightBtn;
+    @FindBy(xpath = "//div[@class='ContextualFooter2']/div[2]/ul/li[7]/a")
+    private WebElement recyclingOption;
     @FindBy(xpath = "(//div[@class='dds__my-3 dds__my-lg-0 dds__p-3 dds__elevation-2 hp-dell-small-ba grey100'])[2]/div[2]/a")
     private WebElement recycleGetStartedBtn;
     @FindBy(xpath = "//div[@class='ContextualFooter1']/div[2]/ul/li[3]/a")
@@ -106,6 +110,7 @@ public class HomePage extends CommonAPI{
     public void clickFooterCopyrightBtn(){click(footerCopyrightBtn);}
 
     public void clickRecycleGetStartedBtn(){click(recycleGetStartedBtn);}
+    public void clickRecyclingOption(){click(recyclingOption);}
     public void clickProductsLaptopsForHomeOption(){click(productsLaptopsForHome);}
 
     public void hoverOverAboutUs(WebDriver driver){hoverOver(driver,aboutUsOption);}

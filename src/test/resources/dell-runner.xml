@@ -4,7 +4,7 @@
 <suite name="Dell Smoke Test">
     <parameter name="useCloudEnv" value="false"></parameter>
     <parameter name="envName" value="browserstack"></parameter>
-    <parameter name="os" value="mac"></parameter>
+    <parameter name="os" value="windows"></parameter>
     <parameter name="osVersion" value="11"></parameter>
     <parameter name="browserName" value="chrome"></parameter>
     <parameter name="browserVersion" value="102"></parameter>

@@ -12,10 +12,10 @@ public class SignInTest extends CommonAPI {
     public void createAccountBtn(){
         HomePage homePage=new HomePage(getDriver());
         Dropdown_SignIn_CreateAccountPage dropdownSignInCreateAccountPage =new Dropdown_SignIn_CreateAccountPage(getDriver());
-        homePage.hoverOverOnSignInBtn(getDriver());         //this is the format off calling hoverOver
-        //hoverOver(getDriver(),homePage.signInHoverOver);        //this is NOT the format
+        homePage.hoverOverOnSignInBtn(getDriver());
         homePage.chickCreateAccountBtn();
-        isPresent(dropdownSignInCreateAccountPage.createAccountText);
+        Assert.assertTrue(isPresent(dropdownSignInCreateAccountPage.createAccountText),"Create Your Account");
+        ;
     }
 
     @Test
@@ -42,8 +42,7 @@ public class SignInTest extends CommonAPI {
         Dropdown_SignIn_DellFinancialSesvicesPage dropdownSignInDellFinancialSesvicesPage =new Dropdown_SignIn_DellFinancialSesvicesPage(getDriver());
         homePage.hoverOverOnSignInBtn(getDriver());
         homePage.clickFinancialServiceBtn();
-        isPresent(dropdownSignInDellFinancialSesvicesPage.dellFinancialServiceText);
-
+        Assert.assertTrue(dropdownSignInDellFinancialSesvicesPage.dellFinancialServiceTextIsPresent());
     }
 
 

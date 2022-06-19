@@ -46,7 +46,7 @@ public class DropDownTest extends CommonAPI {
         Dropdown_Deals_ServerDealsPage dealsServerDealsPage = new Dropdown_Deals_ServerDealsPage(getDriver());
         homePage.hoverOverDealsMenu(getDriver());
         homePage.clickServerDealsOptionFromDealsDropDown();
-        dealsServerDealsPage.serverDealsHeaderTextIsPresent();
+        Assert.assertTrue(dealsServerDealsPage.serverDealsHeaderTextIsPresent());
     }
 
     @Test
@@ -55,14 +55,15 @@ public class DropDownTest extends CommonAPI {
         Support_OrderSupportPage support_orderSupportPage = new Support_OrderSupportPage(getDriver());
         homePage.hoverOverSupport(getDriver());
         homePage.chickHoverOverSupportOrderSupportOption();
-        support_orderSupportPage.orderSupportPageHeaderTextIsPresent();
+        Assert.assertTrue(support_orderSupportPage.orderSupportPageHeaderTextIsPresent());
+
     }
 
     @Test
     public void recycleBtn(){
         HomePage homePage = new HomePage(getDriver());
         RecyclePage recyclePage = new RecyclePage(getDriver());
-        homePage.clickRecycleGetStartedBtn();
+        homePage.clickRecyclingOption();
         String expectedHeaderText = "Computer and IT Equipment Recycling Solutions";
         Assert.assertEquals(expectedHeaderText,recyclePage.recycleHeaderText());
 
