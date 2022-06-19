@@ -9,7 +9,7 @@ import pages.dell_Pages.HomePage;
 
 public class RadioButtonOrCheckBoxTest extends CommonAPI{
 
-    //@Test
+    @Test
     public void radioBtnForBusiness(){
         HomePage homePage=new HomePage(getDriver());
         Dropdown_Products_Laptops_ForHomePage dropdown_products_laptops_forHomePage = new Dropdown_Products_Laptops_ForHomePage(getDriver());

@@ -11,8 +11,11 @@ import org.openqa.selenium.support.PageFactory;
 public class Dropdown_SignIn_DellFinancialSesvicesPage extends CommonAPI {
 
     public Dropdown_SignIn_DellFinancialSesvicesPage(WebDriver driver){PageFactory.initElements(driver, this);}
-    @FindBy(xpath = "//div[@class='sc-dIsAE dWzdfH']/h1")
-    public WebElement dellFinancialServiceText;
+    @FindBy(xpath = "//h1[@class='sc-bqGHjH gIHfsz']")
+    private WebElement dellFinancialServiceText;
 
 
+    public boolean dellFinancialServiceTextIsPresent() {
+        return isPresent(dellFinancialServiceText);
+    }
 }

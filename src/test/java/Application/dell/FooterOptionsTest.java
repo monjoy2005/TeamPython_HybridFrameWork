@@ -13,7 +13,7 @@ public class FooterOptionsTest extends CommonAPI {
         HomePage homePage=new HomePage(getDriver());
         ContactUsPage contactUsPage = new ContactUsPage(getDriver());
         homePage.clickContactSupportBtn();
-        contactUsPage.checkHeaderTextIsPresent();
+        Assert.assertTrue(contactUsPage.checkHeaderTextIsPresent());
     }
 
     @Test
@@ -21,7 +21,7 @@ public class FooterOptionsTest extends CommonAPI {
         HomePage homePage = new HomePage(getDriver());
         HomePageFooter_EmailSignUpPage homePageFooterEmailSignUpPage = new HomePageFooter_EmailSignUpPage(getDriver());
         homePage.clickEmailSignUpBtn();
-        homePageFooterEmailSignUpPage.emailSignUpHeaderTextIsPresent();
+        Assert.assertTrue(homePageFooterEmailSignUpPage.emailSignUpHeaderTextIsPresent());
     }
 
     @Test
