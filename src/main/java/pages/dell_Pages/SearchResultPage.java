@@ -20,6 +20,9 @@ public class SearchResultPage extends CommonAPI {
     @FindBy(xpath = "//h2[@class='pageinfo']/span[3]")
     private WebElement kvmText;
 
+    @FindBy(xpath = "//div[@class='bc-category-label icon-home']//span")
+    private WebElement kvmSearchText;
+
     @FindBy(xpath = "//h2[@class='pageinfo']/span[3]")
     private WebElement serverPageInfo;
 
@@ -36,11 +39,13 @@ public class SearchResultPage extends CommonAPI {
 
 
     public boolean checkAmdLogoIsPresent(){return isPresent(amdLogo);}
-    public boolean checkMonitorsTextIsPresent(){return isPresent(monitorsText);}
+    public String monitorsSearchText(){return getElementText(monitorsText);}
     //Need to ask is this is the right way
     public boolean checkKvmTextIsPresent(){
         return isPresent(kvmText);
     }
+
+    public String kvmSearchText(){return getElementText(kvmSearchText);}
 
     public String getServerPageInfo() {
         return getElementText(serverPageInfo);

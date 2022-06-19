@@ -1,12 +1,12 @@
 package Application.dell;
 
 import base.CommonAPI;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.dell_Pages.HomePage;
-import pages.dell_Pages.Dropdown_AboutUs_PerspectivesPage;
-import pages.dell_Pages.Dropdown_Deals_ServerDealsPage;
-import pages.dell_Pages.Support_OrderSupportPage;
+import pages.dell_Pages.*;
 
 public class DropDownTest extends CommonAPI {
     @Test
@@ -17,7 +17,6 @@ public class DropDownTest extends CommonAPI {
         homePage.clickHoverOverProductsGamingDellGamingOption();
         String expectedGamingPageTitle = "Gaming PCs and Accessories | Dell USA";
         Assert.assertEquals(getPageTitle(),expectedGamingPageTitle);
-
     }
 
     @Test
@@ -48,7 +47,6 @@ public class DropDownTest extends CommonAPI {
         homePage.hoverOverDealsMenu(getDriver());
         homePage.clickServerDealsOptionFromDealsDropDown();
         dealsServerDealsPage.serverDealsHeaderTextIsPresent();
-
     }
 
     @Test
@@ -60,10 +58,22 @@ public class DropDownTest extends CommonAPI {
         support_orderSupportPage.orderSupportPageHeaderTextIsPresent();
     }
 
+    @Test
+    public void recycleBtn(){
+        HomePage homePage = new HomePage(getDriver());
+        RecyclePage recyclePage = new RecyclePage(getDriver());
+        homePage.clickRecycleGetStartedBtn();
+        String expectedHeaderText = "Computer and IT Equipment Recycling Solutions";
+        Assert.assertEquals(expectedHeaderText,recyclePage.recycleHeaderText());
 
+    }
 
-
-
-
+//    @Test
+//    public void table2(){
+//        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+//        js.executeScript("document.querySelector('.tableFixHead').scrollTop=5000");
+//        waitFor(5);
+//        System.out.println(WebDriver.findElement(By.xpath("//tbody/tr[9]/td[4]")).getText());
+//    }
 
 }

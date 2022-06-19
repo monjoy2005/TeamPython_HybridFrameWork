@@ -3,10 +3,7 @@ package Application.dell;
 import base.CommonAPI;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.dell_Pages.ContactUsPage;
-import pages.dell_Pages.Footer_CopyrightPage;
-import pages.dell_Pages.HomePageFooter_EmailSignUpPage;
-import pages.dell_Pages.HomePage;
+import pages.dell_Pages.*;
 
 public class FooterOptionsTest extends CommonAPI {
 
@@ -17,7 +14,6 @@ public class FooterOptionsTest extends CommonAPI {
         ContactUsPage contactUsPage = new ContactUsPage(getDriver());
         homePage.clickContactSupportBtn();
         contactUsPage.checkHeaderTextIsPresent();
-
     }
 
     @Test
@@ -29,13 +25,21 @@ public class FooterOptionsTest extends CommonAPI {
     }
 
     @Test
-    public void copyrightBtn(){
+    public void copyrightOption(){
         HomePage homePage = new HomePage(getDriver());
         Footer_CopyrightPage footer_copyrightPage = new Footer_CopyrightPage(getDriver());
         homePage.clickFooterCopyrightBtn();
-        //footer_copyrightPage.copyrightHeaderTextIsPresent();                 //can <is present> make it a TEST??
         String expectedHeaderText = "Copyrights";
         Assert.assertEquals(expectedHeaderText,footer_copyrightPage.copyrightHeaderText());
+    }
+
+    @Test
+    public void myProductOption(){
+        HomePage homePage = new HomePage(getDriver());
+        Footer_MyProductPage footer_myProductPage = new Footer_MyProductPage(getDriver());
+        homePage.clickFooterMyProductOption();
+        String expectedHeaderText = "My Products and Services";
+        Assert.assertEquals(expectedHeaderText,footer_myProductPage.myProductPageHeaderText());
     }
 
 

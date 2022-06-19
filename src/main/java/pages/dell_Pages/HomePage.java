@@ -71,7 +71,14 @@ public class HomePage extends CommonAPI{
 
     @FindBy(xpath = "//footer[@id='mh-unified-footer']/nav[3]/ul/li/a")
     private WebElement footerCopyrightBtn;
-
+    @FindBy(xpath = "(//div[@class='dds__my-3 dds__my-lg-0 dds__p-3 dds__elevation-2 hp-dell-small-ba grey100'])[2]/div[2]/a")
+    private WebElement recycleGetStartedBtn;
+    @FindBy(xpath = "//div[@class='ContextualFooter1']/div[2]/ul/li[3]/a")
+    private WebElement footerMyProductOption;
+    @FindBy(xpath = "//nav[@class='mh-top-nav']/ul/li[2]/ul/li[3]/a")
+    private WebElement productsLaptopsOption;
+    @FindBy(xpath = "//nav[@class='mh-top-nav']/ul/li[2]/ul/li[3]/ul/li[3]/a")
+    private WebElement productsLaptopsForHome;
 
 
 
@@ -79,7 +86,7 @@ public class HomePage extends CommonAPI{
 
     public HomePage(WebDriver driver){PageFactory.initElements(driver, this);}
 // reusable steps
-
+    public void clickFooterMyProductOption(){click(footerMyProductOption);}
     public void clickSignInBtn(){
         click(signInBtn);
     }
@@ -92,14 +99,17 @@ public class HomePage extends CommonAPI{
         click(emailSignUp);
     }
     public void clickPerspectivesBtn(){click(perspectivesBtn);}
-
     public void clickContactSupportBtn(){click(contactSupportBtn);}
     public void clickHoverOverProductsGamingDellGamingOption(){click(hoverOverProductsGamingDellGamingOption);}
     public void chickHoverOverSupportOrderSupportOption(){click(hoverOverSupportOrderSupportOption);}
 
     public void clickFooterCopyrightBtn(){click(footerCopyrightBtn);}
 
+    public void clickRecycleGetStartedBtn(){click(recycleGetStartedBtn);}
+    public void clickProductsLaptopsForHomeOption(){click(productsLaptopsForHome);}
+
     public void hoverOverAboutUs(WebDriver driver){hoverOver(driver,aboutUsOption);}
+    public void hoverOverProductsLaptopsOption(WebDriver driver){hoverOver(driver,productsLaptopsOption);}
 
     public void searchElement(String item){
         type(searchField,item);
