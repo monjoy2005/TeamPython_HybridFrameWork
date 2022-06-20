@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Automation smoke Test">
+
+    <parameter name="url" value="http://automationpractice.com/"></parameter>
+    <parameter name="browser" value="chrome"></parameter>
+    <parameter name="os" value="windows"></parameter>
+<!--    <test name="LoginTest">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.LoginTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--        <test name="CartTest">-->
+<!--            <classes>-->
+<!--                <class name="Application.automation.AddToCartTest"></class>-->
+<!--            </classes>-->
+<!--        </test>-->
+<!--        <test name="ColorChangeTest">-->
+<!--            <classes>-->
+<!--                <class name="Application.automation.ColorTest"></class>-->
+<!--            </classes>-->
+<!--        </test>-->
+<!--        <test name="DropdownTest">-->
+<!--            <classes>-->
+<!--                <class name="Application.automation.DropdownSizeTest"></class>-->
+<!--            </classes>-->
+<!--        </test>-->
+<!--        <test name="productViewTest">-->
+<!--            <classes>-->
+<!--                <class name="Application.automation.ItemViewTest"></class>-->
+<!--            </classes>-->
+<!--        </test>-->
+<!--        <test name="QuantityUpDownTest">-->
+<!--            <classes>-->
+<!--                <class name="Application.automation.QuantityTest"></class>-->
+<!--            </classes>-->
+<!--        </test>-->
+        <test name="SearchTest">
+            <classes>
+                <class name="Application.automation.SearchBoxTest"></class>
+            </classes>
+        </test>
+<!--        <test name="WishTest">-->
+<!--            <classes>-->
+<!--                <class name="Application.automation.WishlistTest"></class>-->
+<!--            </classes>-->
+<!--        </test>-->
+<!--    <test name="contact">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.ContactTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="removeItemTest">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.RemoveItemTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="addressTest">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.AddressTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="orderAndHistoryTest">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.OrderHistoryTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="shareTest">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.ShareTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="printTest">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.PrintTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="informationTest">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.InformationTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="personalInfoTest">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.PersonalInfoTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="footerTest">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.FooterTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+
+
+
+
+</suite>

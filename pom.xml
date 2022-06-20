@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.14.3</version>        </dependency>
+            <version>7.6.0</version>        </dependency>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -87,7 +87,7 @@
                 <version>2.22.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>..\April22-SeleniumProject\src\test\resources\amazon-runner.xml</suiteXmlFile>
+                        <suiteXmlFile>C:\Users\flyer\IdeaProjects\TeamPython_HybridFrameWork\src\test\resources\automation-runner.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

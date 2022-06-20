@@ -20,7 +20,7 @@ public class FooterOptionsTest extends CommonAPI {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void emailSignUpBtn(){
         HomePage homePage = new HomePage(getDriver());
         HomePageFooter_EmailSignUpPage homePageFooterEmailSignUpPage = new HomePageFooter_EmailSignUpPage(getDriver());
@@ -28,7 +28,7 @@ public class FooterOptionsTest extends CommonAPI {
         homePageFooterEmailSignUpPage.emailSignUpHeaderTextIsPresent();
     }
 
-    @Test
+    @Test(enabled = false)
     public void copyrightBtn(){
         HomePage homePage = new HomePage(getDriver());
         Footer_CopyrightPage footer_copyrightPage = new Footer_CopyrightPage(getDriver());
