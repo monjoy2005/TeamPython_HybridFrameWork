@@ -15,7 +15,5 @@ public class ContactUsPage extends CommonAPI {
     private WebElement headerText;
 
 
-    public boolean checkHeaderTextIsPresent() {
-        return isPresent(headerText);
-    }
+    public boolean checkHeaderTextIsPresent() {return isPresent(headerText);}
 }

@@ -21,7 +21,9 @@ public class FooterOptionsTest extends CommonAPI {
         HomePage homePage = new HomePage(getDriver());
         HomePageFooter_EmailSignUpPage homePageFooterEmailSignUpPage = new HomePageFooter_EmailSignUpPage(getDriver());
         homePage.clickEmailSignUpBtn();
-        Assert.assertTrue(homePageFooterEmailSignUpPage.emailSignUpHeaderTextIsPresent());
+        String expectedTitle = "Dell-PMC";
+        Assert.assertEquals(getPageTitle(),expectedTitle);
+        //Assert.assertTrue(homePageFooterEmailSignUpPage.emailSignUpHeaderTextIsPresent());
     }
 
     @Test
@@ -40,6 +42,14 @@ public class FooterOptionsTest extends CommonAPI {
         homePage.clickFooterMyProductOption();
         String expectedHeaderText = "My Products and Services";
         Assert.assertEquals(expectedHeaderText,footer_myProductPage.myProductPageHeaderText());
+    }
+    @Test
+    public void termsOfSaleOption(){
+        HomePage homePage = new HomePage(getDriver());
+        Footer_TermsOfSalePage footer_termsOfSalePage = new Footer_TermsOfSalePage(getDriver());
+        homePage.clickFooterTermsOfSaleBtn();
+        String expectedHeaderText = "Terms of Sale";
+        Assert.assertEquals(expectedHeaderText,footer_termsOfSalePage.termsOfSaleHeaderText());
     }
 
 

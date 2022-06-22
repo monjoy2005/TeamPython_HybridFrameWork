@@ -16,7 +16,8 @@ public class SearchTest extends CommonAPI {
     @Test
     public void searchLaptop(){
         HomePage homePage = new HomePage(getDriver());
-        homePage.searchElement("Laptop");
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 1,1));
         homePage.clickSearchBtn();
         String expectedLaptopPageUrl="https://www.dell.com/en-us/search/Laptop";
         Assert.assertEquals(expectedLaptopPageUrl,getPageUrl());
@@ -27,9 +28,10 @@ public class SearchTest extends CommonAPI {
     public void searchAmdLaptop(){
         HomePage homePage = new HomePage(getDriver());
         SearchResultPage searchResultPage = new SearchResultPage(getDriver());
-        homePage.searchElement("AMD Laptop");
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 2,1));
         homePage.clickSearchBtn();
-        Assert.assertTrue(searchResultPage.checkAmdLogoIsPresent());
+        searchResultPage.checkAmdLogoIsPresent();
     }
 
     @Test

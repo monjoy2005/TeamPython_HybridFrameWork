@@ -14,9 +14,5 @@ public class HomePageFooter_EmailSignUpPage extends CommonAPI {
     @FindBy(xpath = "//div[@class='col-md-8']/h1")
     private WebElement headerText;
 
-
-
-
-
     public boolean emailSignUpHeaderTextIsPresent() {return isPresent(headerText);}
 }

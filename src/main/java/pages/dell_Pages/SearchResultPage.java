@@ -12,7 +12,7 @@ public class SearchResultPage extends CommonAPI {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//img[@class='direct-content__img']")
+    @FindBy(xpath = "//div[@class='direct-content__img-info']/a/img")
     private WebElement amdLogo;
 
     @FindBy(xpath = "//span[@class='search-string']")
