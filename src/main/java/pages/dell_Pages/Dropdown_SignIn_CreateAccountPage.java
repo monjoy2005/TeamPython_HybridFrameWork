@@ -17,12 +17,8 @@ public class Dropdown_SignIn_CreateAccountPage extends CommonAPI{
     public WebElement createAccountText;
 
 
-
-
-
-    public void clickSingUpBtn(){
-        click(createAccountText);
-    }
+    public void clickSingUpBtn(){click(createAccountText);
+        System.out.println("Click Create Account Btn success");}
 
     // reusable methods
 

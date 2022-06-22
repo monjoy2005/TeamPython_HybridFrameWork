@@ -15,7 +15,6 @@ public class SignInTest extends CommonAPI {
         homePage.hoverOverOnSignInBtn(getDriver());
         homePage.chickCreateAccountBtn();
         Assert.assertTrue(isPresent(dropdownSignInCreateAccountPage.createAccountText),"Create Your Account");
-        ;
     }
 
     @Test
@@ -27,9 +26,9 @@ public class SignInTest extends CommonAPI {
         DashBoardPage dashBoardPage =new DashBoardPage(getDriver());
         homePage.hoverOverOnSignInBtn(getDriver());
         homePage.clickSignInBtn();
-        dropdownSignInSignInPage.cleanEmailAddressField();
+        dropdownSignInSignInPage.clearEmailAddressField();
         dropdownSignInSignInPage.inputEmailAddress(excelReader.getDataFromCell("dell",3,3));
-        dropdownSignInSignInPage.cleanPasswordField();
+        dropdownSignInSignInPage.clearPasswordField();
         dropdownSignInSignInPage.inputPassword(excelReader.getDataFromCell("dell",3,4));
         dropdownSignInSignInPage.clickSignInBtn();
         String expectedMassage = "Mritunjoy";
@@ -42,9 +41,29 @@ public class SignInTest extends CommonAPI {
         Dropdown_SignIn_DellFinancialSesvicesPage dropdownSignInDellFinancialSesvicesPage =new Dropdown_SignIn_DellFinancialSesvicesPage(getDriver());
         homePage.hoverOverOnSignInBtn(getDriver());
         homePage.clickFinancialServiceBtn();
-        Assert.assertTrue(dropdownSignInDellFinancialSesvicesPage.dellFinancialServiceTextIsPresent());
+        Assert.assertFalse(dropdownSignInDellFinancialSesvicesPage.dellFinancialServiceTextIsPresent());
+    }
+    @Test
+    public void premierSignInBtn(){
+        HomePage homePage=new HomePage(getDriver());
+        Dropdown_PremierSignInPage dropdown_premierSignInPage = new Dropdown_PremierSignInPage(getDriver());
+        homePage.hoverOverOnSignInBtn(getDriver());
+        homePage.clickPremierSignInBtn();
+        Assert.assertTrue(dropdown_premierSignInPage.premierSignInHeaderTextsPresent());
     }
 
+    @Test
+    public void signInWithInvalidCredential(){
+        HomePage homePage = new HomePage(getDriver());
+        homePage.hoverOverOnSignInBtn(getDriver());
+        homePage.clickSignInBtn();
+        Dropdown_SignIn_SignInPage dropdownSignInSignInPage =new Dropdown_SignIn_SignInPage(getDriver());
+        dropdownSignInSignInPage.clearEmailAddressField();
+        dropdownSignInSignInPage.clearPasswordField();
+        dropdownSignInSignInPage.clickSignInBtn();
+        String expectedMassage = "Please enter your email address.";
+        Assert.assertEquals(dropdownSignInSignInPage.errorEmailAddressMassage(),expectedMassage);
+    }
 
 
 }

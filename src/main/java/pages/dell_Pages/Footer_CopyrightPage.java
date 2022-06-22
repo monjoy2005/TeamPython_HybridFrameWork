@@ -14,6 +14,7 @@ public class Footer_CopyrightPage extends CommonAPI {
     private WebElement headerText;
 
 
+
     public boolean copyrightHeaderTextIsPresent() {
         return super.isPresent(headerText);
     }

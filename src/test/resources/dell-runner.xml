@@ -24,7 +24,7 @@
 
     <test name="DropDown Test">
         <classes>
-            <class name="Application.dell.DropDownTest"></class>
+            <class name="Application.dell.HeaderMenuOptionTest"></class>
         </classes>
     </test>
 
@@ -34,17 +34,23 @@
         </classes>
     </test>
 
-        <test name="RadioBtn and CheckBox Test">
-            <classes>
-                <class name="Application.dell.RadioButtonOrCheckBoxTest"></class>
-            </classes>
-        </test>
+    <test name="RadioBtn and CheckBox Test">
+        <classes>
+            <class name="Application.dell.RadioButtonOrCheckBoxTest"></class>
+        </classes>
+    </test>
 
-         <test name="Scroll Bar Test">
-            <classes>
-                 <class name="Application.dell.ScrollBarTest"></class>
-             </classes>
-        </test>
+    <test name="Scroll Bar Test">
+        <classes>
+            <class name="Application.dell.ScrollBarTest"></class>
+        </classes>
+    </test>
+
+    <test name="Cart Test">
+        <classes>
+            <class name="Application.dell.CartTest"></class>
+        </classes>
+    </test>
 
 
 
