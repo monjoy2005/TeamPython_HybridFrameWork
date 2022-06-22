@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class HomePage extends CommonAPI {
+public class HomePage{
 
     private final Logger LOG = LoggerFactory.getLogger(HomePage.class);
     @FindBy(css = "a.login")
