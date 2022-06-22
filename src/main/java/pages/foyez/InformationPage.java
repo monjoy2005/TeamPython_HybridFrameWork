@@ -5,10 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class InformationPage extends CommonAPI {
 
-
+    private final Logger LOG = LoggerFactory.getLogger(InformationPage.class);
 @FindBy(xpath = "(//a[@title='T-shirts'])[2]")
 private WebElement TShirts;
 @FindBy(css = "a[title='Delivery']")
@@ -52,29 +54,36 @@ private WebElement aboutUsAssertion;
 
     public void clickOnTShirts(){
         click(TShirts);
+        LOG.info("click on TShirts success");
     }
 
     public void clickOnDelivery(){
         click(delivery);
+        LOG.info("click on delivery success");
     }
 
     public void clickOnLegalNotice(){
         click(legalNotice);
+        LOG.info("click on search legal notice success");
     }
 
     public void clickOnTermsCondition(){
         click(termsCondition);
+        LOG.info("click on terms condition success");
     }
 
     public void clickOnAboutUs(){
         click(aboutUs);
+        LOG.info("click on about us success");
     }
     public void clickOnSecurePayment(){
         click(securePayment);
+        LOG.info("click on secure payment success");
     }
 
     public void clickOnOurStores(){
         click(ourStores);
+        LOG.info("click on our stores success");
     }
 
 

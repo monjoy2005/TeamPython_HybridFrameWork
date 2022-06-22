@@ -47,14 +47,17 @@ public class LoginPage extends CommonAPI {
 
     public void putEmail(String userEmail){
         type(Email,userEmail);
+        LOG.info("put email success");
     }
 
     public void putPassword(String userPass){
         type(password,userPass);
+        LOG.info("put password success");
     }
 
     public void hitSignIn(){
         click(submitSignIn);
+        LOG.info("Hit sign in success");
     }
 
 

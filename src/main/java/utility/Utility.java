@@ -27,13 +27,13 @@ public class Utility {
     }
 
 //    public static void main(String[] args) {
-//        String originalInput = "pK4miZ8sp15afqsvGckE";
+//        String originalInput = "FvsF1yqkzCozyYc5K9QM";
 //        String encodedString = Base64.getEncoder().encodeToString(originalInput.getBytes());
 //        System.out.println(encodedString);
-//
+
 //        byte[] decodedBytes = Base64.getDecoder().decode("bmFjZXJoYWRqc2FpZDE=");
 //        String decodedString = new String(decodedBytes);
 //        System.out.println(decodedString);
-//    }
+//   }
 
-}
+    }

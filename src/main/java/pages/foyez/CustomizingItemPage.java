@@ -5,9 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CustomizingItemPage extends CommonAPI {
-
+    private final Logger LOG = LoggerFactory.getLogger(CustomizingItemPage.class);
     @FindBy(css = "a[class='btn btn-default button-plus product_quantity_up']")
     private WebElement quantityUp;
 
@@ -46,30 +48,36 @@ public class CustomizingItemPage extends CommonAPI {
 
     public void clickOnColor(){
         click(color);
+        LOG.info("click on color success");
     }
 
     public void clickOnQuantityUp(){
         click(quantityUp);
+        LOG.info("click on quantity up success");
     }
 
     public void clickOnQuantityDown(){
         click(quantityDown);
+        LOG.info("click on quantity down success");
     }
 
 
 
     public void selectOptionFromDropdownMenu(String option){
         selectFromDropdown(size,option);
+        LOG.info("select option from dropdown menu success");
     }
 
 
 
     public void clickOnPinterest(){
         click(pinterest);
+        LOG.info("click on pinterest success");
     }
 
     public void clickOnPrint(){
         click(print);
+        LOG.info("click on print success");
     }
 
 

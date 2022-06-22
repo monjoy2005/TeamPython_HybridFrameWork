@@ -5,10 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CheckOutPage extends CommonAPI {
 
-
+    private final Logger LOG = LoggerFactory.getLogger(CheckOutPage.class);
 @FindBy(css = "#layered_id_attribute_group_2")
 public WebElement sizeForFilter;
 @FindBy(css = "#layered_id_feature_3")
@@ -94,31 +96,38 @@ private WebElement orderConfirmation;
 //reusable steps
     public void clickOnSize(){
         click(sizeForFilter);
+        LOG.info("click on size success");
     }
 
     public void clickOnComposition(){
         click(filterCompositionViscose);
+        LOG.info("click composition success");
     }
 
     public void clickOnProperties(){
         click(filterPropertiesShortDress);
+        LOG.info("click to properties success");
     }
 
     public void clickOnAddToCart(){
         click(addCart);
+        LOG.info("click on add to cart success");
     }
 
     public void clickOnCheckOut(){
         click(checkOut);
+        LOG.info("click on check out success");
     }
 
 
     public void clickOnCheckOutProceed(){
         click(checkOutProceed);
+        LOG.info("click on checkout proceed success");
     }
 
     public void enterMessage(String text){
         type(messagebox,text);
+        LOG.info("enter message success");
     }
 
     public String messageHeader(){
@@ -127,21 +136,26 @@ private WebElement orderConfirmation;
 
     public void clickOnCheckOutAfterMessage(){
         click(checkOutAfterMessage);
+        LOG.info("click on check out after message success");
     }
     public void clickOnAgreeCheckbox(){
         click(termsOfServiceCheckbox);
+        LOG.info("click on agree check box success");
     }
 
     public void clickOnCheckOutAfterTermCheck(){
         click(checkOutAfterTermsCheck);
+        LOG.info("click on checkout after term check success");
     }
 
     public void clickOnPaymentMethod(){
         click(paymentMethod);
+        LOG.info("click on payment method success");
     }
 
     public void clickOnConfirmOrder(){
         click(confirmOrder);
+        LOG.info("click on confirm order success");
     }
     public String confirmHeader(){
         return getElementText(confirmationAssertion);
@@ -150,19 +164,23 @@ private WebElement orderConfirmation;
 
     public void hoverOverShoppingCart(WebDriver driver){
         hoverOver(driver,shoppingCart);
+        LOG.info("hover over success");
     }
 
     public void clickOnCheckOutFromShoppingCart(){
         click(checkOutFromShoppingCart);
+        LOG.info("click on check out from shopping cart success");
     }
 
 
     public void selectDeliveryAddress(String option){
         selectFromDropdown(deliveryAddress,option);
+        LOG.info("select delivery address success");
     }
 
     public void clickOnUncheckAddress(){
         click(uncheckAddress);
+        LOG.info("uncheck address success");
     }
 
 
@@ -172,10 +190,12 @@ private WebElement orderConfirmation;
 
     public void clickOnOtherPaymentMethod(){
         click(otherPaymentMethod);
+        LOG.info("click on other payment method success");
     }
 
     public void clickOnPayByCheck(){
         click(payByCheck);
+        LOG.info("click on pay by check success");
     }
 
     public String orderConfirmationHeader(){

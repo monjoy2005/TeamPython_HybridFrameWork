@@ -48,21 +48,21 @@
 <!--                <class name="Application.automation.WishlistTest"></class>-->
 <!--            </classes>-->
 <!--        </test>-->
-    <test name="contact">
-        <classes>
-            <class name="Application.automation.ContactTest"></class>
-        </classes>
-    </test>
+<!--    <test name="contact">-->
+<!--        <classes>-->
+<!--            <class name="Application.automation.ContactTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
 <!--    <test name="removeItemTest">-->
 <!--        <classes>-->
 <!--            <class name="Application.automation.RemoveItemTest"></class>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="addressTest">-->
-<!--        <classes>-->
-<!--            <class name="Application.automation.AddressTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="addressTest">
+        <classes>
+            <class name="Application.automation.AddressTest"></class>
+        </classes>
+    </test>
 <!--    <test name="orderAndHistoryTest">-->
 <!--        <classes>-->
 <!--            <class name="Application.automation.OrderHistoryTest"></class>-->

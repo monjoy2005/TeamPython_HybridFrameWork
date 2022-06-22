@@ -5,10 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AddToCartPage extends CommonAPI {
 
-
+    private final Logger LOG = LoggerFactory.getLogger(AddToCartPage.class);
     @FindBy(css = "#product_reference")
     private WebElement modelAssertion;
 
@@ -42,13 +44,16 @@ public class AddToCartPage extends CommonAPI {
 
     public void clickToCart(){
         click(AddCart);
+        LOG.info("click to cart success");
     }
 
     public void clickOnContinueShopping(){
         click(continueShopping);
+        LOG.info("click on continue shopping success");
     }
     public void clickOnShoppingCart(){
         click(shoppingCart);
+        LOG.info("click on shopping cart success");
     }
 
     public String modelHeader(){
@@ -58,10 +63,12 @@ public class AddToCartPage extends CommonAPI {
 
     public void clickOnAddToCartWithFilter(){
         click(addToCartWithFilter);
+        LOG.info("click on add to cart with filter success");
     }
 
     public void clickOnList(){
         click(listView);
+        LOG.info("click on list success");
     }
 
 

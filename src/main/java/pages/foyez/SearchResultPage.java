@@ -5,10 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SearchResultPage extends CommonAPI {
 
-
+    private final Logger LOG = LoggerFactory.getLogger(SearchResultPage.class);
     @FindBy(xpath = "//p[@class='alert alert-warning']")
     private WebElement KeyWordText;
 
@@ -117,59 +119,73 @@ public class SearchResultPage extends CommonAPI {
 
     public void extendWomen(){
         click(Categories_Women_plus);
+        LOG.info("extend women success");
     }
 
     public void hoverOverFloating(WebDriver driver){
         hoverOver(driver,floatingMenu);
+        LOG.info("hover over success");
 
     }
 
     public void clickOnItemViewer(){
         click(itemViewer);
+        LOG.info("click on item viewer success");
     }
 
     public void clickOnTopSellerItem(){
         click(topSellerItem);
+        LOG.info("click on top seller item success");
     }
 
     public void clickOnFashionManu(){
         click(fashionManu);
+        LOG.info("click on fashion manufacturer success");
     }
 
     public void clickOnFashionSupplier(){
         click(fashionSupplier);
+        LOG.info("click on fashion supplier success");
     }
 
     public void clickOnCategories_Women_Top_plus(){
         click(Categories_Women_Top_plus);
+        LOG.info("click on categories women top plus success");
     }
     public void clickOnCategories_Women_Top_TShirt(){
         click(Categories_Women_Top_TShirt);
+        LOG.info("click on categories women top T-shirt success");
     }
 
     public void clickOnCategories_Women_Dresses_plus(){
         click(Categories_Women_Dresses_plus);
+        LOG.info("click on categories women dresses plus success");
     }
 
     public void clickOnCategories_Women_Dresses_SummerDresses(){
         click(Categories_Women_Dresses_SummerDresses);
+        LOG.info("click on categories women dresses summerDresses success");
     }
 
     public void clickOnFloatingCasual(){
         click(floatingCasual);
+        LOG.info("click on floating casual success");
     }
 
     public void clickOnFloatingEvening(){
         click(floatingEvening);
+        LOG.info("click on floating evening success");
     }
 
     public void clickOnFloatingTShirts(){
         click(floatingTShirts);
+        LOG.info("click on floating T-shirts success");
     }
 
 
     public void clickOnItemFromSide(){
         click(itemViewFromSide);
+        LOG.info("click on item from side success");
     }
 
 
@@ -227,6 +243,7 @@ public class SearchResultPage extends CommonAPI {
 
     public void clickOnFloatingMenu(){
         click(floatingMenu);
+        LOG.info("click on floating menu success");
     }
 
 }
