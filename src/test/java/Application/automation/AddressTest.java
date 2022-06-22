@@ -12,7 +12,7 @@ import utility.Utility;
 public class AddressTest extends CommonAPI {
 
 
-    @Test
+    @Test(enabled = false)
     public void address(){
         HomePage homePage= new HomePage(getDriver());
         LoginPage loginPage= new LoginPage(getDriver());
@@ -24,6 +24,8 @@ public class AddressTest extends CommonAPI {
         loginPage.putEmail(email);
         loginPage.putPassword(password);
         loginPage.hitSignIn();
+        String expectedMessage= excelReader.getDataFromCell("Sheet1",8,0);
+        Assert.assertEquals(homePage.userNameAssertion(),expectedMessage);
         homePage.clickOnUserName();
         addressPage.clickOnMyAddresses();
         String expected=excelReader.getDataFromCell("Sheet1",4,3);
@@ -36,7 +38,7 @@ public class AddressTest extends CommonAPI {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void updateAddress(){
 
         HomePage homePage= new HomePage(getDriver());
@@ -51,6 +53,8 @@ public class AddressTest extends CommonAPI {
         loginPage.hitSignIn();
         homePage.clickOnUserName();
         addressPage.clickOnMyAddresses();
+        String expectedAddress= excelReader.getDataFromCell("Sheet1",7,3);
+        Assert.assertEquals(addressPage.addressMessage(),expectedAddress);
         addressPage.clickOnUpdate();
         addressPage.clearCityField();
         String updatedCity=excelReader.getDataFromCell("Sheet1",5,3);
@@ -78,6 +82,8 @@ public class AddressTest extends CommonAPI {
         homePage.clickOnUserName();
         addressPage.clickOnMyAddresses();
         addressPage.clickOnAddNewAddress();
+        String expectedRequired=excelReader.getDataFromCell("Sheet1",8,3);
+        Assert.assertEquals(addressPage.requiredField(),expectedRequired);
         String street=excelReader.getDataFromCell("Sheet1",0,4);
         String city=excelReader.getDataFromCell("Sheet1",1,4);
         String state=excelReader.getDataFromCell("Sheet1",2,4);
@@ -97,7 +103,7 @@ public class AddressTest extends CommonAPI {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void deleteAddress(){
 
         HomePage homePage= new HomePage(getDriver());
@@ -118,13 +124,6 @@ public class AddressTest extends CommonAPI {
         Assert.assertEquals(addressPage.allAddressList(),expected);
 
     }
-
-
-
-
-
-
-
 
 
 

@@ -54,6 +54,18 @@ private WebElement deleteAddress;
 @FindBy(xpath = "//strong[text()='Your addresses are listed below.']")
 private WebElement allAddressAssertion;
 
+
+
+@FindBy(css = "p[class='p-indent']")
+private WebElement addressMessageAssertion;
+
+
+@FindBy(css = "p[class='required']")
+private WebElement requireFieldAssertion;
+
+
+
+
     public AddressPage(WebDriver driver){
         PageFactory.initElements(driver,this);
 
@@ -137,5 +149,17 @@ private WebElement allAddressAssertion;
     public String allAddressList(){
         return getElementText(allAddressAssertion);
     }
+
+
+
+    public String addressMessage(){
+        return getElementText(addressMessageAssertion);
+    }
+
+
+    public String requiredField(){
+        return getElementText(requireFieldAssertion);
+    }
+
 
 }

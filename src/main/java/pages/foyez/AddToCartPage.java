@@ -21,7 +21,11 @@ public class AddToCartPage extends CommonAPI {
     @FindBy(css = "a[title='View my shopping cart']")
     private WebElement shoppingCart;
 
+    @FindBy(xpath = "(//a[@title='Add to cart'])[1]/span")
+    private WebElement addToCartWithFilter;
 
+    @FindBy(css = "a[title='List']")
+    public WebElement listView;
 
 
 
@@ -50,6 +54,18 @@ public class AddToCartPage extends CommonAPI {
     public String modelHeader(){
         return getElementText(modelAssertion);
     }
+
+
+    public void clickOnAddToCartWithFilter(){
+        click(addToCartWithFilter);
+    }
+
+    public void clickOnList(){
+        click(listView);
+    }
+
+
+
 
 
 

@@ -11,7 +11,7 @@ import utility.Utility;
 
 public class OrderHistoryTest extends CommonAPI {
 
-@Test(enabled = false)
+@Test
 public void OrderCheckTest(){
     HomePage homePage= new HomePage(getDriver());
     LoginPage loginPage= new LoginPage(getDriver());
@@ -24,6 +24,8 @@ public void OrderCheckTest(){
     loginPage.putPassword(password);
     loginPage.hitSignIn();
     homePage.clickOnUserName();
+    String expected= excelReader.getDataFromCell("Sheet1",9,9);
+    Assert.assertEquals(orderHistoryPage.accountInfo(),expected);
     orderHistoryPage.clickOnOrderHistory();
 
 
@@ -67,7 +69,7 @@ public void OrderCheckTest(){
     orderHistoryPage.clickOnBackToAccount();
 }
 
-@Test
+@Test(enabled = false)
     public void backToHomeTest(){
     HomePage homePage= new HomePage(getDriver());
     LoginPage loginPage= new LoginPage(getDriver());

@@ -26,7 +26,7 @@ public class LoginTest extends CommonAPI {
         loginPage.putEmail(email);
         loginPage.putPassword(password);
         loginPage.hitSignIn();
-        String expectedMessage="Karim khan";
+        String expectedMessage= excelReader.getDataFromCell("Sheet1",8,0);
         Assert.assertEquals(homePage.userNameAssertion(),expectedMessage);
 
 
@@ -36,14 +36,14 @@ public class LoginTest extends CommonAPI {
     public void SignInWithInvalidCred(){
         HomePage homePage= new HomePage(getDriver());
         LoginPage loginPage= new LoginPage(getDriver());
-        ExcelReader excelReader=new ExcelReader("C:\\Users\\flyer\\IdeaProjects\\TeamPython_HybridFrameWork\\data\\Excel.xlsx");
+        ExcelReader excelReader=new ExcelReader(Utility.currentDir+"/data/Excel.xlsx");
         String email= excelReader.getDataFromCell("Sheet1",2,0);
         String password= excelReader.getDataFromCell("Sheet1",3,0);
         homePage.clickOnSignIn();
         loginPage.putEmail(email);
         loginPage.putPassword(password);
         loginPage.hitSignIn();
-        String expectedMessage="Authentication failed.";
+        String expectedMessage= excelReader.getDataFromCell("Sheet1",9,0);
         Assert.assertEquals(loginPage.warningHeader(),expectedMessage);
 
 
@@ -59,7 +59,7 @@ public class LoginTest extends CommonAPI {
         loginPage.putEmail(email);
         loginPage.putPassword(password);
         loginPage.hitSignIn();
-        String expectedMessage="Forgot your password?";
+        String expectedMessage= excelReader.getDataFromCell("Sheet1",10,0);
         Assert.assertEquals(loginPage.forgotPasswordHeader(),expectedMessage);
 
 
@@ -76,7 +76,7 @@ public class LoginTest extends CommonAPI {
         loginPage.putEmail(email);
         loginPage.putPassword(password);
         loginPage.hitSignIn();
-        String expectedMessage="ALREADY REGISTERED?";
+        String expectedMessage= excelReader.getDataFromCell("Sheet1",11,0);
         Assert.assertEquals(loginPage.alreadyRegisteredHeader(),expectedMessage);
 
     }

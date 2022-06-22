@@ -11,7 +11,7 @@ import utility.Utility;
 
 public class ItemViewTest extends CommonAPI {
 
-    @Test(enabled = false)
+    @Test
     public void itemDetails(){
         HomePage homePage= new HomePage(getDriver());
         LoginPage loginPage= new LoginPage(getDriver());
@@ -46,7 +46,7 @@ public class ItemViewTest extends CommonAPI {
         homePage.searchElement(product);
         homePage.clickOnSearchBtn();
         searchResultPage.clickOnTopSellerItem();
-        String expected = "Printed chiffon knee length dress with tank straps. Deep v-neckline.";
+        String expected=excelReader.getDataFromCell("Sheet1",0,9);
         Assert.assertEquals(searchResultPage.itemDescriptionHeader(),expected);
 
 
@@ -61,7 +61,7 @@ public class ItemViewTest extends CommonAPI {
         homePage.searchElement(product);
         homePage.clickOnSearchBtn();
         searchResultPage.clickOnFashionManu();
-        String expectedMessage="LIST OF PRODUCTS BY MANUFACTURER FASHION MANUFACTURER";
+        String expectedMessage=excelReader.getDataFromCell("Sheet1",1,9);
         Assert.assertEquals(searchResultPage.listOfProductFromFashionManuAssertion(),expectedMessage);
 
 
@@ -76,7 +76,7 @@ public class ItemViewTest extends CommonAPI {
         homePage.searchElement(product);
         homePage.clickOnSearchBtn();
         searchResultPage.clickOnFashionSupplier();
-        String expectedMessage="LIST OF PRODUCTS BY SUPPLIER: FASHION SUPPLIER";
+        String expectedMessage=excelReader.getDataFromCell("Sheet1",2,9);
         Assert.assertEquals(searchResultPage.listOfProductionFromFashionSupplierAssertion(),expectedMessage);
 
 
@@ -93,7 +93,7 @@ public class ItemViewTest extends CommonAPI {
         searchResultPage.extendWomen();
         searchResultPage.clickOnCategories_Women_Top_plus();
         searchResultPage.clickOnCategories_Women_Top_TShirt();
-        String expectedMessage="T-SHIRTS ";
+        String expectedMessage=excelReader.getDataFromCell("Sheet1",3,9);
         Assert.assertEquals(searchResultPage.TShirtsHeader(),expectedMessage);
 
 
@@ -110,7 +110,7 @@ public class ItemViewTest extends CommonAPI {
         searchResultPage.extendWomen();
         searchResultPage.clickOnCategories_Women_Dresses_plus();
         searchResultPage.clickOnCategories_Women_Dresses_SummerDresses();
-        String expectedMessage="SUMMER DRESSES ";
+        String expectedMessage=excelReader.getDataFromCell("Sheet1",4,9);
         Assert.assertEquals(searchResultPage.SummerDressesAssertion(),expectedMessage);
 
 
@@ -125,7 +125,7 @@ public class ItemViewTest extends CommonAPI {
         homePage.clickOnSearchBtn();
         searchResultPage.hoverOverFloating(getDriver());
         searchResultPage.clickOnFloatingCasual();
-        String expectedMessage = "CASUAL DRESSES ";
+        String expectedMessage=excelReader.getDataFromCell("Sheet1",5,9);
         Assert.assertEquals(searchResultPage.casualHeader(),expectedMessage);
 
 
@@ -140,7 +140,7 @@ public class ItemViewTest extends CommonAPI {
         homePage.clickOnSearchBtn();
         searchResultPage.hoverOverFloating(getDriver());
         searchResultPage.clickOnFloatingEvening();
-        String expectedMessage="EVENING DRESSES ";
+        String expectedMessage=excelReader.getDataFromCell("Sheet1",6,9);
         Assert.assertEquals(searchResultPage.eveningHeader(),expectedMessage);
 
     }
@@ -155,7 +155,7 @@ public class ItemViewTest extends CommonAPI {
         homePage.clickOnSearchBtn();
         searchResultPage.hoverOverFloating(getDriver());
         searchResultPage.clickOnFloatingTShirts();
-        String expectedMessage="There is 1 product.";
+        String expectedMessage=excelReader.getDataFromCell("Sheet1",7,9);
         Assert.assertEquals(searchResultPage.floatingTShirtHeader(),expectedMessage);
 
     }
@@ -163,8 +163,9 @@ public class ItemViewTest extends CommonAPI {
     public void itemViewingFromHomePage(){
         HomePage homePage= new HomePage(getDriver());
         SearchResultPage searchResultPage= new SearchResultPage(getDriver());
+        ExcelReader excelReader=new ExcelReader(Utility.currentDir+"/data/Excel.xlsx");
         homePage.clickOnHomePageItem();
-        String expectedMessage="Faded Short Sleeve T-shirts";
+        String expectedMessage=excelReader.getDataFromCell("Sheet1",8,9);
         Assert.assertEquals(searchResultPage.fadedShortTShirtHeader(),expectedMessage);
 
     }

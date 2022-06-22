@@ -12,19 +12,20 @@ import utility.Utility;
 public class WishlistTest extends CommonAPI {
 
 
-    @Test
+    @Test(enabled = false)
     public void addToWishlist(){
         HomePage homePage= new HomePage(getDriver());
         WishlistPage wishlistPage = new WishlistPage(getDriver());
+        ExcelReader excelReader=new ExcelReader(Utility.currentDir+"/data/Excel.xlsx");
         homePage.clickOnHomePageItem();
-        String expectedMessage="Condition New";
+        String expectedMessage= excelReader.getDataFromCell("Sheet1",10,9);
         Assert.assertEquals(wishlistPage.productHeader(),expectedMessage);
         wishlistPage.clickOnWishlist();
 
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void viewingWishlist(){
         HomePage homePage= new HomePage(getDriver());
         LoginPage loginPage= new LoginPage(getDriver());
@@ -38,7 +39,7 @@ public class WishlistTest extends CommonAPI {
         loginPage.hitSignIn();
         homePage.clickOnUserName();
         wishlistPage.clickOnMyWishlist();
-        String expectedMessage="MY WISHLISTS";
+        String expectedMessage= excelReader.getDataFromCell("Sheet1",11,9);
         Assert.assertEquals(wishlistPage.wishListHeader(),expectedMessage);
 
     }
@@ -47,8 +48,12 @@ public class WishlistTest extends CommonAPI {
     public void addToWishlistByNonAcHolder(){
         HomePage homePage= new HomePage(getDriver());
         WishlistPage wishlistPage = new WishlistPage(getDriver());
+        ExcelReader excelReader=new ExcelReader(Utility.currentDir+"/data/Excel.xlsx");
         homePage.clickOnHomePageItem();
+        String expectedMessage= excelReader.getDataFromCell("Sheet1",12,9);
+        Assert.assertEquals(getPageUrl(),expectedMessage);
         wishlistPage.clickOnWishlist();
+
     }
 
 

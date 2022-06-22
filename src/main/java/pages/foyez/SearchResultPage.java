@@ -224,4 +224,9 @@ public class SearchResultPage extends CommonAPI {
         return getElementText(fadedShortTShirtAssertion);
     }
 
+
+    public void clickOnFloatingMenu(){
+        click(floatingMenu);
+    }
+
 }

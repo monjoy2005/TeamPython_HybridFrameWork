@@ -39,7 +39,11 @@ private WebElement siteMap;
 private WebElement order;
 
 
+@FindBy(css="a[title='My addresses']")
+private WebElement addressFooter;
 
+@FindBy(css = "a[title='Manage my personal information']")
+private WebElement myPersonalInfoFooter;
 
 
     public FooterOptionsPage(WebDriver driver){
@@ -87,7 +91,12 @@ private WebElement order;
         click(order);
     }
 
+public void clickOnAddressFooter(){
+        click(addressFooter);
+}
 
-
+public void clickOnMyPersonalInfoFooter(){
+        click(myPersonalInfoFooter);
+}
 
 }

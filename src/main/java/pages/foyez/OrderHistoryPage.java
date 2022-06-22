@@ -22,6 +22,10 @@ private WebElement backToAccount;
 private WebElement backToHome;
 
 
+@FindBy(css = "p[class='info-account']")
+private WebElement accountInfo;
+
+
 
     public OrderHistoryPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -45,4 +49,10 @@ private WebElement backToHome;
     public void clickOnHome(){
         click(backToHome);
     }
+
+
+    public String accountInfo(){
+        return getElementText(accountInfo);
+    }
+
 }
