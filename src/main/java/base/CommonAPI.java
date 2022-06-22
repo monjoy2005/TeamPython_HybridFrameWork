@@ -18,7 +18,6 @@ import org.testng.annotations.Optional;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
 import utility.Utility;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -115,10 +114,10 @@ public class CommonAPI {
             }
         }else if (os.equalsIgnoreCase("mac")){
             if (browser.equalsIgnoreCase("chrome")){
-                System.setProperty("webdriver.chrome.driver", Utility.currentDir+"\\driver\\mac\\chromedriver");
+                System.setProperty("webdriver.chrome.driver", Utility.currentDir+"//driver/mac/chromedriver");
                 driver = new ChromeDriver();
             }else if (browser.equalsIgnoreCase("firefox")){
-                System.setProperty("webdriver.gecko.driver", Utility.currentDir+"\\driver\\mac\\geckodriver");
+                System.setProperty("webdriver.gecko.driver", Utility.currentDir+"//driver/mac/geckodriver");
                 driver = new FirefoxDriver();
             }
         }else if (os.equalsIgnoreCase("linux")){
@@ -158,13 +157,16 @@ public class CommonAPI {
             }
         }else {
             getLocalDriver(browserName, os);
+            System.out.println("Chrome browser opened");        //Success Massage
         }
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(duration)));
         if (maximizeBrowser.equalsIgnoreCase("true")){
             driver.manage().window().maximize();
+            System.out.println("Window maximized success");     //Success Massage
         }
         driver.get(url);
+        System.out.println("landed desired homepage");          //Success Massage
     }
 
 //    @AfterMethod
@@ -179,6 +181,7 @@ public class CommonAPI {
     public String getPageTitle(){
         return driver.getTitle();
     }
+
     public String getPageUrl(){             //NEW by joy
         return driver.getCurrentUrl();
     }
