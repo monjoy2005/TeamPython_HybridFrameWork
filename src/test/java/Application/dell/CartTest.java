@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.dell_Pages.*;
 
-public class CartTest extends CommonAPI {
+public class  CartTest extends CommonAPI {
 
     //@Test
     public void addOneItemToCart(){

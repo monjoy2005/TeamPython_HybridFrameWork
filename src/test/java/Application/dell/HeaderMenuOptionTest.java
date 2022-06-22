@@ -5,6 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.dell_Pages.*;
 
+import javax.swing.*;
+
 public class HeaderMenuOptionTest extends CommonAPI {
     @Test
     public void dellGaming(){
@@ -40,6 +42,15 @@ public class HeaderMenuOptionTest extends CommonAPI {
         homePage.clickServerDealsOptionFromDealsDropDown();
         Assert.assertTrue(dealsServerDealsPage.serverDealsHeaderTextIsPresent());
     }
+    @Test
+    public void dellGamings(){
+        HomePage homePage=new HomePage(getDriver());
+        homePage.hoverOverProducts(getDriver());
+        homePage.hoverOverProductsGaming(getDriver());
+        homePage.clickHoverOverProductsGamingDellGamingOption();
+        String expectedGamingPageTitle = "Gaming PCs and Accessories | Dell USA";
+        Assert.assertEquals(getPageTitle(),expectedGamingPageTitle);
+    }
 
     @Test
     public void orderSupport(){
@@ -56,6 +67,14 @@ public class HeaderMenuOptionTest extends CommonAPI {
         homePage.clickRecyclingOption();
         String expectedHeaderText = "Computer and IT Equipment Recycling Solutions";
         Assert.assertEquals(expectedHeaderText,recyclePage.recycleHeaderText());
+    }
+    @Test
+    public void workStation(){
+        HomePage homePage=new HomePage(getDriver());
+        homePage.hoverOverProducts(getDriver());
+        homePage.clickWorkStationsBtn();
+        String expectedUrl = "https://www.dell.com/en-us/work/shop/scc/sc/workstations";
+        Assert.assertEquals(expectedUrl,getPageUrl());
     }
 
 //    @Test

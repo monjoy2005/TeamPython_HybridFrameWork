@@ -30,5 +30,16 @@ public class ScrollBarTest extends CommonAPI {
         Assert.assertTrue(driversAndDownloadPage.driversAndDownloadHeaderTextIsPresent());
 
     }
+    @Test
+    public void myProductsOptionWithScrollBar(){
+        HomePage homePage = new HomePage(getDriver());
+        Footer_MyProductPage footer_myProductPage = new Footer_MyProductPage(getDriver());
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("window.scrollBy(0,9500)");
+        homePage.clickFooterMyProductOption();
+        String expectedHeaderText = "My Products and Services";
+        Assert.assertEquals(expectedHeaderText,footer_myProductPage.myProductPageHeaderText());
+    }
+
 
 }

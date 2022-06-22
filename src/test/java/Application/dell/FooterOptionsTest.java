@@ -23,7 +23,6 @@ public class FooterOptionsTest extends CommonAPI {
         homePage.clickEmailSignUpBtn();
         String expectedTitle = "Dell-PMC";
         Assert.assertEquals(getPageTitle(),expectedTitle);
-        //Assert.assertTrue(homePageFooterEmailSignUpPage.emailSignUpHeaderTextIsPresent());
     }
 
     @Test
@@ -31,8 +30,8 @@ public class FooterOptionsTest extends CommonAPI {
         HomePage homePage = new HomePage(getDriver());
         Footer_CopyrightPage footer_copyrightPage = new Footer_CopyrightPage(getDriver());
         homePage.clickFooterCopyrightBtn();
-        String expectedHeaderText = "Copyrights";
-        Assert.assertEquals(expectedHeaderText,footer_copyrightPage.copyrightHeaderText());
+        String expectedUrl = "https://www.dell.com/learn/us/en/uscorp1/site-terms-of-use-copyright";
+        Assert.assertEquals(getPageUrl(),expectedUrl);
     }
 
     @Test
@@ -50,6 +49,24 @@ public class FooterOptionsTest extends CommonAPI {
         homePage.clickFooterTermsOfSaleBtn();
         String expectedHeaderText = "Terms of Sale";
         Assert.assertEquals(expectedHeaderText,footer_termsOfSalePage.termsOfSaleHeaderText());
+    }
+
+    @Test
+    public void myProductOptions(){
+        HomePage homePage = new HomePage(getDriver());
+        Footer_MyProductPage footer_myProductPage = new Footer_MyProductPage(getDriver());
+        homePage.clickFooterMyProductOption();
+        String expectedHeaderText = "My Products and Services";
+        Assert.assertEquals(expectedHeaderText,footer_myProductPage.myProductPageHeaderText());
+    }
+
+    @Test
+    public void emailSignUpButton(){
+        HomePage homePage = new HomePage(getDriver());
+        HomePageFooter_EmailSignUpPage homePageFooterEmailSignUpPage = new HomePageFooter_EmailSignUpPage(getDriver());
+        homePage.clickEmailSignUpBtn();
+        String expectedTitle = "Dell-PMC";
+        Assert.assertEquals(getPageTitle(),expectedTitle);
     }
 
 

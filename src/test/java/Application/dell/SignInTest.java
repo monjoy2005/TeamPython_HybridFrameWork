@@ -65,5 +65,18 @@ public class SignInTest extends CommonAPI {
         Assert.assertEquals(dropdownSignInSignInPage.errorEmailAddressMassage(),expectedMassage);
     }
 
+    @Test
+    public void signInWithInvalidCredential2(){
+        HomePage homePage = new HomePage(getDriver());
+        homePage.hoverOverOnSignInBtn(getDriver());
+        homePage.clickSignInBtn();
+        Dropdown_SignIn_SignInPage dropdownSignInSignInPage =new Dropdown_SignIn_SignInPage(getDriver());
+        dropdownSignInSignInPage.clearEmailAddressField();
+        dropdownSignInSignInPage.clearPasswordField();
+        dropdownSignInSignInPage.clickSignInBtn();
+        String expectedMassage = "Please enter your email address.";
+        Assert.assertEquals(dropdownSignInSignInPage.errorEmailAddressMassage(),expectedMassage);
+    }
+
 
 }

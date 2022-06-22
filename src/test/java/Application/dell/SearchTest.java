@@ -129,6 +129,25 @@ public class SearchTest extends CommonAPI {
             homePage.searchElementAndEnter(item);
             homePage.clearSearchField();
         }
+    }
+
+    @Test
+    public void invalidSearch(){
+        HomePage homePage=new HomePage(getDriver());
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 7,1));
+        String expectedTitle = "Computers, Monitors & Technology Solutions | Dell USA";
+        Assert.assertEquals(expectedTitle,getPageTitle());
+    }
+
+    @Test
+    public void bag(){
+        HomePage homePage = new HomePage(getDriver());
+        ExcelReader excelReader = new ExcelReader(Utility.currentDir+"//data/TestData.xlsx");
+        homePage.searchElement(excelReader.getDataFromCell("dell", 8,1));
+        homePage.clickSearchBtn();
+        String expectedTitle = "Dell Search";
+        Assert.assertEquals(expectedTitle,getPageTitle());
 
     }
 
