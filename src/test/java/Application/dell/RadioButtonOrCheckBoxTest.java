@@ -145,5 +145,6 @@ public class RadioButtonOrCheckBoxTest extends CommonAPI{
         dropdown_products_laptops_forHomePage.clickSilverOptionCheckBox();
         String expectedUrl2 = "https://www.dell.com/en-us/shop/dell-laptops/sr/laptops/12th-gen-intel-core?appliedRefinements=39795,15677,5973";
         Assert.assertEquals(expectedUrl2,getPageUrl());
+    
     }
 }
