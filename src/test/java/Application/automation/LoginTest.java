@@ -28,9 +28,7 @@ public class LoginTest extends CommonAPI {
         loginPage.hitSignIn();
         String expectedMessage= excelReader.getDataFromCell("Sheet1",8,0);
         Assert.assertEquals(homePage.userNameAssertion(),expectedMessage);
-
-
-    }
+}
 
     @Test
     public void SignInWithInvalidCred(){
